@@ -10,26 +10,25 @@
     <p>
         <?php
         // ここにコードを書いていく
-        $nums = [15, 4, 18, 23, 10];
-        //訂正箇所　$arrayの代入を無くした。
-        sort_2way($nums, TRUE); //訂正箇所　引数に$numsと真偽値を入れた
-        sort_2way($nums, FALSE); //訂正箇所
-        function sort_2way($nums, $order){
+        function sort_2way($array, $order){ //訂正箇所　引数に$arrayと$orderを入れた　
           
         if($order) {
           echo "昇順にしました。<br>";
-          sort($nums);
-          foreach($nums as $num) {
+          sort($array);
+          foreach($array as $num) {
             echo $num . '<br>';
           }
         }else {
           echo "降順にしました。<br>";
-          rsort($nums);
-          foreach($nums as $num) {
+          rsort($array);
+          foreach($array as $num) {
             echo $num . '<br>';
           }
          }
         }
+        $nums = [15, 4, 18, 23, 10];
+        sort_2way($nums, TRUE); 
+        sort_2way($nums, FALSE); 
 
       
         ?>
